@@ -1,0 +1,49 @@
+body {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #5050ff;
+}
+
+.date {
+  background-color: red;
+}
+
+img {
+  width: 200px;
+}
+
+
+.box1 {
+  text-align: left;
+  margin-right: 50%;
+  border-left: 0;
+  border-right: 5px;
+  border-bottom: 0;
+  border-top: 0;
+  border-color: darkblue;
+  border-style: solid;
+}
+
+.box2 {
+  text-align: right;
+  margin-left: 49.65%;
+  border-left: 5px;
+  border-right: 0;
+  border-bottom: 0;
+  border-top: 0;
+  border-color: darkblue;
+  border-style: solid;
+}
+
+.box3 {
+  text-align: left;
+  margin-right: 50%;
+  border-left: 0;
+  border-right: 5px;
+  border-bottom: 0;
+  border-top: 0;
+  border-color: darkblue;
+  border-style: solid;
+}

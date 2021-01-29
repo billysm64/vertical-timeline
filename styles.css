@@ -1,9 +1,17 @@
 body {
   box-sizing: border-box;
+  background-color: #A9A9A9;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font:  */
 }
 
 button {
-  background-color: #5050ff;
+  background-color: #276188;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .date {
@@ -11,39 +19,129 @@ button {
 }
 
 img {
-  width: 200px;
+  width: 100%;
 }
 
+.container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
 
-.box1 {
-  text-align: left;
-  margin-right: 50%;
-  border-left: 0;
-  border-right: 5px;
+.container::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 2px #2D648C;
+}
+
+.event {
   border-bottom: 0;
   border-top: 0;
   border-color: darkblue;
   border-style: solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.box2 {
+.event .circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 25px;
+  background-color: #396489;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.event:nth-child(odd) {
+  text-align: left;
+  border-left: 0;
+  border-right: 5px;
+  clear: both;
+}
+
+.event:nth-child(odd) .event-info::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 10%;
+  border-left: solid 10px red;
+  border-top: solid 10px transparent;
+  border-bottom: solid 10px transparent;
+}
+
+.event:nth-child(even) .event-info::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 10%;
+  border-right: solid 10px red;
+  border-top: solid 10px transparent;
+  border-bottom: solid 10px transparent;
+}
+
+.event:nth-child(even) {
   text-align: right;
-  margin-left: 49.65%;
+  /* margin-left: 49.65%; */
   border-left: 5px;
   border-right: 0;
-  border-bottom: 0;
-  border-top: 0;
-  border-color: darkblue;
-  border-style: solid;
+
 }
 
-.box3 {
-  text-align: left;
-  margin-right: 50%;
-  border-left: 0;
-  border-right: 5px;
-  border-bottom: 0;
-  border-top: 0;
-  border-color: darkblue;
-  border-style: solid;
+.event:nth-child(even) .event-info {
+  float: right;
 }
+
+time {
+  background-color: #BB4049;
+  color: #ffffff;
+}
+
+.event-info {
+  position: relative; /* Allows you to position this element in relation to where it will normally fall, children in relation to self */
+  width: 400px;
+  border-right: 50%;
+  background-color: #ffffff;
+}
+
+.event:nth-child(odd) time {
+  position: absolute; /* Allows you to position root element, as it is an ancestor to an element with position: relative */
+  top: 0;
+  right: 0;
+  -moz-transform: rotate(135deg);
+}
+
+.event:nth-child(even) time {
+  position: absolute; /* Allows you to position root element, as it is an ancestor to an element with position: relative */
+  top: 0;
+  left: 0;
+}
+
+/* clear on one child and float on the other will make one float right and clear the rest of float */
+
+.event:after {
+    margin-top: -1px;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*
+
+Circles:
+
+pseudo-element
+
+event
+font-awesome icon circle
+
+border-radius to make circle
+
+*/
